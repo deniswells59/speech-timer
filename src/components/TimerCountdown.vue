@@ -3,7 +3,7 @@ import { store } from '../store';
 </script>
 
 <template>
-  <div>
+  <div :class="{ hidden: !store.showTimer }">
     <span v-if="(Boolean(store.minutes) || store.minutes === 0) && store.minutes < 10">0</span>
     <p>{{ store.minutes ?? '00' }}</p>
 
@@ -19,6 +19,11 @@ div {
   display: flex;
   font-size: 4rem;
   color: var(--color-heading);
+  transition: all 0.2s ease-out;
+}
+
+div.hidden {
+  opacity: 0;
 }
 
 p {

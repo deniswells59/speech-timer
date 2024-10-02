@@ -16,21 +16,33 @@ import TIMER_TYPES from './constants/timerTypes';
   <TimerCountdown />
 
   <main>
-    <button class="secondary" @click="store.resetTimer()">Reset Timer</button>
+    <div>
+      <button class="secondary small" @click="store.resetTimer()">Reset</button>
+      <button class="primary small toggleButton" @click="store.toggleTimer()">
+        {{ store.showTimer ? 'Hide' : 'Show' }} Timer
+      </button>
+    </div>
 
-    <div v-for="timerType in TIMER_TYPES" :key="timerType.name">
+    <div class="timer-button-container" v-for="timerType in TIMER_TYPES" :key="timerType.name">
       <TimerButton
         :name="timerType.name"
         :total-time="timerType.totalTime"
         :timestamps="timerType.timestamps"
       />
     </div>
-
   </main>
 </template>
 
 <style scoped>
 h1 {
   text-align: center;
+}
+
+button.toggleButton {
+  min-width: 180px;
+}
+
+div.timer-button-container {
+  display: flex;
 }
 </style>

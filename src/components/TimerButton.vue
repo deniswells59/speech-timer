@@ -14,4 +14,8 @@ const props = defineProps({
   </button>
 </template>
 
-<style scoped></style>
+<style scoped>
+button.primary {
+  width: 100%;
+}
+</style>
