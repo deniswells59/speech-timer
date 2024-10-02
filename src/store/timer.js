@@ -1,5 +1,4 @@
 import moment from 'moment';
-import { reactive } from 'vue';
 
 // The delay after the user clicks to start the timer
 // (This makes for a better UX where the user can easily see the initial
@@ -9,15 +8,14 @@ const INPUT_DELAY_IN_MS = 1200;
 // // How often we check the time
 const TIMER_INTERVAL_IN_MS = 100;
 
-export const store = reactive({
-  data() {
-    return {
-      minutes: 0,
-      seconds: 0,
-      interval: null,
-      countDownDate: null,
-    };
-  },
+export const data = {
+    minutes: 0,
+    seconds: 0,
+    interval: null,
+    countDownDate: null,
+  };
+
+export const methods = {
   resetTimer() {
     this.minutes = 0;
     this.seconds = 0;
@@ -36,8 +34,8 @@ export const store = reactive({
       }, TIMER_INTERVAL_IN_MS);
 
       // Call the timer while we wait for our interval
-      // fixes edge case where a second appears to be skipped due while
-      // waiting for initial interval time
+      // (fixes edge case where a second appears to be skipped due while
+      //  waiting for initial interval time)
       this.setTimerOnInterval();
     }, INPUT_DELAY_IN_MS);
   },
@@ -58,5 +56,5 @@ export const store = reactive({
     if (this.minutes <= 0 && this.seconds <= 0) {
       this.resetTimer();
     }
-  },
-});
+  }
+};
