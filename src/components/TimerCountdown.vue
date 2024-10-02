@@ -17,6 +17,8 @@ import { store } from '../store';
 <style scoped>
 div {
   display: flex;
+  font-size: 4rem;
+  color: var(--color-heading);
 }
 
 p {

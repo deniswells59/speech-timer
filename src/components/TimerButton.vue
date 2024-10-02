@@ -1,5 +1,5 @@
 <script setup>
-import { store } from './store';
+import { store } from '../store';
 
 const props = defineProps({
   name: String,
@@ -9,7 +9,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <button @click="store.startTimer(props.totalTime, props.timestamps)">{{ props.name }}</button>
+  <button class="primary" @click="store.startTimer(props.totalTime, props.timestamps)">
+    {{ props.name }}
+  </button>
 </template>
 
 <style scoped></style>

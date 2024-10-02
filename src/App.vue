@@ -1,6 +1,7 @@
 <script setup>
 import { store } from './store';
 import TimerCountdown from './components/TimerCountdown.vue';
+import TimerButton from './components/TimerButton.vue';
 
 import TIMER_TYPES from './constants/timerTypes';
 </script>
@@ -8,21 +9,28 @@ import TIMER_TYPES from './constants/timerTypes';
 <template>
   <header>
     <div class="wrapper">
-      <h1>Speech and Debate Timer</h1>
+      <h1>Speech and Debate Practice Timer</h1>
     </div>
   </header>
 
   <TimerCountdown />
 
   <main>
+    <button class="secondary" @click="store.resetTimer()">Reset Timer</button>
+
     <div v-for="timerType in TIMER_TYPES" :key="timerType.name">
-      <button @click="store.startTimer(timerType.totalTime, timerType.timestamps)">
-        {{ timerType.name }}
-      </button>
+      <TimerButton
+        :name="timerType.name"
+        :total-time="timerType.totalTime"
+        :timestamps="timerType.timestamps"
+      />
     </div>
 
-    <button @click="store.resetTimer()">Reset Timer</button>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  text-align: center;
+}
+</style>

@@ -3,33 +3,27 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+button {
+  font-size: 1.5rem;
+  padding: 0.5rem 4rem;
+  border-radius: 12px;
+  min-width: 260px;
+  margin: 10px;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+button.primary {
+  background: var(--color-border);
+  color: var(--vt-c-green);
+  border: 1px solid var(--vt-c-green);
 }
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+button.secondary {
+  background: var(--vt-c-green);
+  color: #fff;
+  border: 1px solid #fff;
 }
