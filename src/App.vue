@@ -1,9 +1,14 @@
 <script setup>
+import { onMounted } from 'vue';
 import { store } from './store';
 import TimerCountdown from './components/TimerCountdown.vue';
 import TimerButton from './components/TimerButton.vue';
 
 import TIMER_TYPES from './constants/timerTypes';
+
+onMounted(() => {
+  store.setAudio();
+});
 </script>
 
 <template>

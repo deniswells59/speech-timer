@@ -23,7 +23,7 @@ export const methods = {
       played: false,
     }));
 
-    this.setAudio();
+    this.playAudio();
   },
   /**
    * TODO: I don't think Vue likes me updating state this often (every ~100 ms)
@@ -58,7 +58,6 @@ export const methods = {
     source.src = ping;
 
     audio.load();
-    audio.play();
   },
   playAudio(playCount) {
     const audio = document.getElementById(AUDIO_ID);
