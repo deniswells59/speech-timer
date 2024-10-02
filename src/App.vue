@@ -1,6 +1,8 @@
 <script setup>
 import { store } from './store';
 import TimerCountdown from './components/TimerCountdown.vue';
+
+import TIMER_TYPES from './constants/timerTypes';
 </script>
 
 <template>
@@ -13,7 +15,12 @@ import TimerCountdown from './components/TimerCountdown.vue';
   <TimerCountdown />
 
   <main>
-    <button @click="store.startTimer(2, [{ minutes: 1, seconds: 50 }])">Start Timer</button>
+    <div v-for="timerType in TIMER_TYPES" :key="timerType.name">
+      <button @click="store.startTimer(timerType.totalTime, timerType.timestamps)">
+        {{ timerType.name }}
+      </button>
+    </div>
+
     <button @click="store.resetTimer()">Reset Timer</button>
   </main>
 </template>
