@@ -13,7 +13,7 @@ import TimerCountdown from './components/TimerCountdown.vue';
   <TimerCountdown />
 
   <main>
-    <button @click="store.startTimer(7)">Start Timer</button>
+    <button @click="store.startTimer(2, [{ minutes: 1, seconds: 50 }])">Start Timer</button>
     <button @click="store.resetTimer()">Reset Timer</button>
   </main>
 </template>

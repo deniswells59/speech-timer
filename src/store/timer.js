@@ -9,11 +9,11 @@ const INPUT_DELAY_IN_MS = 1200;
 const TIMER_INTERVAL_IN_MS = 100;
 
 export const data = {
-    minutes: 0,
-    seconds: 0,
-    interval: null,
-    countDownDate: null,
-  };
+  minutes: 0,
+  seconds: 0,
+  interval: null,
+  countDownDate: null,
+};
 
 export const methods = {
   resetTimer() {
@@ -21,8 +21,9 @@ export const methods = {
     this.seconds = 0;
     clearInterval(this.interval);
   },
-  startTimer(timeinMinutes) {
+  startTimer(timeinMinutes, timestamps) {
     this.resetTimer();
+    this.setPlaylist(timestamps);
     this.initTimer(timeinMinutes);
 
     setTimeout(() => {
@@ -52,9 +53,10 @@ export const methods = {
 
     this.minutes = minutes;
     this.seconds = seconds;
+    this.checkPlaylist();
 
     if (this.minutes <= 0 && this.seconds <= 0) {
       this.resetTimer();
     }
-  }
+  },
 };
