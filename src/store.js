@@ -3,24 +3,24 @@ import { reactive } from 'vue';
 
 // The delay after the user clicks to start the timer
 // (This makes for a better UX where the user can easily see the initial
-//  start time before the countdown begins)
+// //  start time before the countdown begins)
 const INPUT_DELAY_IN_MS = 1200;
 
-// How often we check the time
+// // How often we check the time
 const TIMER_INTERVAL_IN_MS = 100;
 
 export const store = reactive({
   data() {
     return {
-      minutes: null,
-      seconds: null,
+      minutes: 0,
+      seconds: 0,
       interval: null,
       countDownDate: null,
     };
   },
   resetTimer() {
-    this.minutes = null;
-    this.seconds = null;
+    this.minutes = 0;
+    this.seconds = 0;
     clearInterval(this.interval);
   },
   startTimer(timeinMinutes) {
@@ -45,7 +45,6 @@ export const store = reactive({
   initTimer(timeInMinutes) {
     this.minutes = timeInMinutes;
   },
-  //
   setTimerOnInterval() {
     const now = moment();
     const diff = this.countDownDate - now;
