@@ -1,6 +1,5 @@
 <script setup>
-
-import TheWelcome from './components/TheWelcome.vue';
+import { store } from './store';
 </script>
 
 <template>
@@ -11,11 +10,12 @@ import TheWelcome from './components/TheWelcome.vue';
   </header>
 
   <main>
-    <h3>Timer</h3>
+    <h3>
+      <span>{{ Boolean(store.minutes) && store.minutes < 10 }}</span> {{ store.minutes ?? '00' }} : {{ store.seconds ?? '00' }}</h3>
+
+    <button @click="store.setTimer(7)">Start Timer</button>
+    <button @click="store.resetTimer()">Reset Timer</button>
   </main>
 </template>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
