@@ -6,14 +6,18 @@ const DEFAULT_SETTINGS = {
 };
 
 export const getSettings = () => {
-  try {
-    return JSON.parse(localStorage.getItem(LOCALSTORAGE_SETTINGS_KEY));
-  } catch {
+  const settingsString = localStorage.getItem(LOCALSTORAGE_SETTINGS_KEY);
+
+  if (settingsString) {
+    const parsed = JSON.parse(settingsString);
+    return parsed;
+  } else {
     return DEFAULT_SETTINGS;
   }
 };
 
 export const getSoundType = () => {
+  console.log('getSettings():', getSettings());
   return getSettings().soundType;
 };
 
