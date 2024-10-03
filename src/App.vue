@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { store } from './store';
+import { getSoundType } from './utils/localStorage';
 import TimerCountdown from './components/TimerCountdown.vue';
 import TimerButton from './components/TimerButton.vue';
 import SettingsModal from './components/SettingsModal.vue';
@@ -8,7 +9,7 @@ import SettingsModal from './components/SettingsModal.vue';
 import TIMER_TYPES from './constants/timerTypes';
 
 onMounted(() => {
-  store.setAudio();
+  store.setSound(getSoundType(), true);
 });
 </script>
 

@@ -1,3 +1,4 @@
+import { saveSoundType } from '@/utils/localStorage';
 import SOUND_TYPES from '../constants/soundTypes';
 
 export const data = {
@@ -9,9 +10,14 @@ export const methods = {
   toggleTimer() {
     this.showTimer = !this.showTimer;
   },
-  setSound(soundType) {
+  setSound(soundType, muted = false) {
     this.sound = soundType;
+    saveSoundType(soundType);
+
     this.setAudio();
-    this.playAudio();
+
+    if (!muted) {
+      this.playAudio();
+    }
   },
 };
