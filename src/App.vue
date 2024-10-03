@@ -22,10 +22,10 @@ onMounted(() => {
 
   <main>
     <div>
-      <button class="secondary small" @click="store.resetTimer()">Reset</button>
       <button class="primary small toggleButton" @click="store.toggleTimer()">
         {{ store.showTimer ? 'Hide' : 'Show' }} Timer
       </button>
+      <button class="secondary small" @click="store.resetTimer()">Reset</button>
     </div>
 
     <div class="timer-button-container" v-for="timerType in TIMER_TYPES" :key="timerType.name">
@@ -49,5 +49,11 @@ button.toggleButton {
 
 div.timer-button-container {
   display: flex;
+  margin: 1rem 0rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 </style>

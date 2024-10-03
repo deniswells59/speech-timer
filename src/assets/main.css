@@ -1,4 +1,5 @@
 @import './base.css';
+@import 'bootstrap-icons/font/bootstrap-icons';
 
 #app {
   max-width: 1280px;
@@ -13,11 +14,11 @@
 button {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 3rem;
   border-radius: 2rem;
-  min-width: 260px;
   margin: 10px;
   cursor: pointer;
+  border: 1px solid black;
 }
 button.primary {
   background: var(--c-primary);
@@ -32,4 +33,17 @@ button.secondary {
 button.small {
   min-width: 10px;
   padding: 1rem;
+}
+
+button.circle {
+  width: 65px;
+  height: 40px;
+  padding: 2px;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  display: block;
+  min-width: 1px;
+  background: var(--c-dark);
+  border: 1px solid var(--c-primary);
+  color: var(--c-primary);
 }

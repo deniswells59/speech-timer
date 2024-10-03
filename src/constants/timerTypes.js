@@ -1,6 +1,6 @@
 export default [
   {
-    name: 'Extempt',
+    name: 'Extemp',
     totalTime: '7',
     timestamps: [
       { minutes: 5, seconds: 0 },
