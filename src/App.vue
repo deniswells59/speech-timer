@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import { store } from './store';
 import TimerCountdown from './components/TimerCountdown.vue';
 import TimerButton from './components/TimerButton.vue';
+import SettingsModal from './components/SettingsModal.vue';
 
 import TIMER_TYPES from './constants/timerTypes';
 
@@ -25,6 +26,7 @@ onMounted(() => {
       <button class="primary small toggleButton" @click="store.toggleTimer()">
         {{ store.showTimer ? 'Hide' : 'Show' }} Timer
       </button>
+
       <button class="secondary small" @click="store.resetTimer()">Reset</button>
     </div>
 
@@ -36,6 +38,8 @@ onMounted(() => {
       />
     </div>
   </main>
+
+  <SettingsModal />
 </template>
 
 <style scoped>

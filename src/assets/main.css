@@ -20,10 +20,12 @@ button {
   cursor: pointer;
   border: 1px solid black;
 }
+
 button.primary {
   background: var(--c-primary);
   color: var(--c-dark);
 }
+
 button.secondary {
   background: var(--c-dark);
   color: var(--c-primary);
@@ -36,7 +38,7 @@ button.small {
 }
 
 button.circle {
-  width: 65px;
+  width: 55px;
   height: 40px;
   padding: 2px;
   font-size: 1.8rem;

@@ -1,5 +1,3 @@
-import ping from '../assets/sounds/ping.mp3';
-
 const AUDIO_ID = 'jukebox';
 const AUDIO_SOURCE_ID = 'audioSource';
 
@@ -54,8 +52,7 @@ export const methods = {
   setAudio() {
     const audio = document.getElementById(AUDIO_ID);
     const source = document.getElementById(AUDIO_SOURCE_ID);
-
-    source.src = ping;
+    source.src = `/src/assets/sounds/${this.sound}`;
 
     audio.load();
   },
