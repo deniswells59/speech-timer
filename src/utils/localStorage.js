@@ -17,7 +17,6 @@ export const getSettings = () => {
 };
 
 export const getSoundType = () => {
-  console.log('getSettings():', getSettings());
   return getSettings().soundType;
 };
 

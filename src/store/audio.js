@@ -52,7 +52,7 @@ export const methods = {
   setAudio() {
     const audio = document.getElementById(AUDIO_ID);
     const source = document.getElementById(AUDIO_SOURCE_ID);
-    source.src = `/src/assets/sounds/${this.sound}`;
+    source.src = `/sounds/${this.sound}`;
 
     audio.load();
   },
