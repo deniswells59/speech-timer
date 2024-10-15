@@ -1,14 +1,18 @@
-# speech-timer
+# Speech and Debate Practice Timer
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple practice timer for speech and debate competitors to quickly test their pacing in different speech/debate categories.
 
-## Recommended IDE Setup
+## Unique Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Predefined Speech/Debate categories to skip timer configuration
+- Hideable Timer (replicates competitive environment)
+- Configurable time sound effect
 
-## Customize configuration
+## Built with
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Vue.js](https://vuejs.org/)
+- [Moment.js](https://momentjs.com/)
+- [Vite](https://vite.dev/)
 
 ## Project Setup
 
